@@ -10,10 +10,10 @@ pop2017 <- read_csv("raw/pop2013-2017.csv") %>%
 ################Births
 births <- subarray(
   collapseIterations(
-    fetchBoth(filenameEst = "out/birthNormal.est",
-              filenamePred = "out/birthNormal.pred",
-              where = c("model", "likelihood", "mean")),
-    probs = 0.75),
+    fetchBoth(filenameEst = "out/birthBinomial.est",
+              filenamePred = "out/birthBinomial.pred",
+              where = c("model", "likelihood", "prob")),
+    probs = 0.5),
   year > 2016)
 
 #Change births to df
@@ -26,10 +26,10 @@ births <- as.data.frame(births) %>%
 ################Deaths
 deaths <- subarray(
   collapseIterations(
-    fetchBoth(filenameEst = "out/deathNormal.est",
-              filenamePred = "out/deathNormal.pred",
-              where = c("model", "likelihood", "mean")),
-    probs = 0.75),
+    fetchBoth(filenameEst = "out/deathBinomial.est",
+              filenamePred = "out/deathBinomial.pred",
+              where = c("model", "likelihood", "prob")),
+    probs = 0.5),
   year > 2016)
 
 #Change deaths to df
@@ -83,4 +83,4 @@ rollMult <- function(dat) {
 
 high <- rollMult(pop2017)
 
-saveRDS(high, "highPred.RDS")         
+saveRDS(high, "midPredBinom.RDS")         
