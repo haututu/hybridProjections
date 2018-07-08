@@ -27,3 +27,14 @@ Long term I want to automatically sample posterior samples and build a distribut
 ## Missing data
 Yet to be implemented is the ability for multiple imputation of missing age or sex data.
 Then the model runs over each imputed dataset and averages results to account for missing data.
+
+# How to crank the handle
+In order to run the simulation in its present state you must use the following scripts in roughly given order:
+
+1. projectBirthRates.R
+2. projectDeathRates.R
+3. simulate.R
+4. mcmcDiagnostics.R (optional scrappy code)
+5. aggregate.R (summarises projections for graphing)
+
+**NB:** No data is included with this project so you will need your own rates/population to do projections.
