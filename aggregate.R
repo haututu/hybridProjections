@@ -26,11 +26,11 @@ datBinom.graph <- group_by(datBinom, projection, year) %>%
 
 bind.graph <- rbind(dat.graph, datBinom.graph)
 
-ggplot(bind.graph, aes(x=year, y=mid, group=source, fill=source)) +
+ggplot(datBinom.graph, aes(x=year, y=mid)) +
   geom_line(aes(color=source)) +
-  geom_ribbon(aes(ymin=low, ymax=high), alpha=0.2) +
+  geom_ribbon(aes(ymin=low, ymax=high), alpha=0.2, fill="red") +
   theme_classic() +
-  labs(title = "Rough projection of Māori population",
+  labs(title = "Rough projection of trust population",
        y= "Population count",
        x= "Year"
        )
