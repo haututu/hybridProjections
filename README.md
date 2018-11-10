@@ -5,7 +5,7 @@ In saying that, it could be a good way to make the best of a bad situation. One 
 # How it works
 
 ## Birth rates and mortality rates
-Currently the model uses Maori population birth and death rates then forecasts them using the `demest` package. A bayesian demography package that you can read more about (here)[https://github.com/StatisticsNZ/demest].
+Currently the model uses Maori population birth and death rates then forecasts them using the `demest` package. A bayesian demography package that you can read more about [here](https://github.com/StatisticsNZ/demest).
 The plan is that you can also use custom birth/death rates and model them against larger populations to get more accurate forecasting.
 
 ## Base population
